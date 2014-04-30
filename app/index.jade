@@ -1,24 +1,43 @@
 doctype html
 html(lang='en')
-  head
-    meta(charset='utf-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    title Pure Template
-    link(rel='stylesheet', href='http://yui.yahooapis.com/pure/0.5.0-rc-1/pure-min.css')
-    link(rel='stylesheet', href='http://yui.yahooapis.com/pure/0.5.0-rc-1/grids-responsive-min.css')
-    link(rel='stylesheet', href='./css/app.css')
-  body
-    h1 Pure Template
+	head
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		title Breaking Bad!
+		link(rel='stylesheet', href='http://yui.yahooapis.com/pure/0.5.0-rc-1/pure-min.css')
+		link(rel='stylesheet', href='http://yui.yahooapis.com/pure/0.5.0-rc-1/grids-responsive-min.css')
+		link(rel='stylesheet', href='css/app.css')
 
-    .pure-g
-      .pure-u-1-2
-      .pure-u-1-2
-        a.pure-button(href='http://qrohlf.com/trianglify/') Background SVG Image
 
-    .pure-g
-      .pure-u-1-3: a.pure-button.button-success.button-xsmall(href='http://stage.purecss.io/') Documentation
-      .pure-u-1-3: a.pure-button.button-error.button-xlarge(href='http://stage.purecss.io/grids/') Grids
-      .pure-u-1-3: a.pure-button.button-secondary(href='http://stage.purecss.io/grids/#using-grids-with-custom-fonts') Changing Fonts
 
-    script(src='./js/vendor/jquery-2.1.0.js')
-    script(src='./js/source/main.js')
+	body
+
+		h1 5eaking Bad
+		div#gameGrid
+			table
+				thead
+					tr
+						th
+				tbody
+					- for(var i = 0; i < 4; ++i)
+						tr
+							- for(var j = 0; j < 5; ++j)
+								td.panel(id='panel'+(5*i+j))
+									.container
+										.flipper
+											img.back(src='media/h.jpg')
+											img.front(src='media/images/panels/walt.jpg')
+		div#gameInfo
+			button#start Start Bitch!
+			#clock 60sec!
+
+
+
+
+
+
+
+
+
+		script(src='js/vendor/jquery-2.1.0.js')
+		script(src='js/source/main.js')

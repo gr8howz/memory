@@ -1,7 +1,15 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
+@panelPaddingSize: 4px;
+
+@font-face{
+  font-family: BBType;
+  font-weight: bold;
+  src: url("../media/fonts/BB.otf")
+}
+
 body{
-  background-image: url('../media/bg.svg');
+  background-image: url('../media/wallpaper.jpg');
   background-size: cover;
   background-attachment: fixed;
 }
@@ -52,3 +60,123 @@ html, button, input, select, textarea,
 .button-xlarge {
   font-size: 150%;
 }
+
+#gameGrid, #gameInfo{
+	display: inline-block;
+	vertical-align: top;
+}
+
+#gameGrid{
+	border-collapse: collapse;
+
+	td{
+		padding: 0px;
+		margin: 0px;
+		img{
+			height: 110px;
+			width: 110px;
+			border-radius: 10px;
+		}
+	}
+
+	.pure-g{
+		padding: 0px;
+		margin: 0px;
+	}
+}
+
+#gameGrid .back:not(.rotate):hover{
+		padding: 0;
+		border: @panelPaddingSize solid gray;
+		cursor: pointer;
+}
+
+.container{
+	width: 110px;
+	height: 110px;
+	padding: @panelPaddingSize;
+	-webkit-perspective: 350;
+	-moz-perspective: 350;
+	-ms-perspective: 350;
+}
+
+#audio{
+    display: none;
+}
+
+h1{
+  font-family: BBType;
+  font-size: 100px;
+  color: white;
+}
+
+button{
+
+}
+
+#start{
+  height: 85px;
+  width: 120px;
+  border-radius: 10px;
+  font-size: 27px;
+  color: white;
+  font-weight: bold;
+  background-color: black;
+}
+
+#clock{
+	width: 120px;
+	height: 85px;
+	background-color: gray;
+	color: white;
+	font-weight: bold;
+  font-size: 40px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.flipper, .front, .back{
+	width: 100%;
+	height: 100%;
+	color: white;
+	font-size: 36px;
+	text-align: center;
+}
+
+.flipper{
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	-webkit-transition-duration: 2s;
+	-moz-transition-duration: 2s;
+	-ms-transition-duration: 2s;
+	position: relative;
+  border-radius: 10px;
+
+}
+
+.front, .back{
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+}
+
+.front{
+	z-index: 10;
+}
+
+.front, .faceUp{
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+}
+
+::selection {
+  background: rgba(0, 0, 0, 0);
+  /* Safari */
+}
+::-moz-selection {
+  background: rgba(0, 0, 0, 0);}
